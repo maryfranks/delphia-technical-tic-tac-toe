@@ -12,7 +12,7 @@ to do: instructions to run
 
 include tests throughout
 
-- [ ] program should take command line input
+- [x] program should take command line input
 - [ ] implement tic tac toe game class
   - [ ] take a turn
   - [ ] display a board

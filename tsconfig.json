@@ -1,9 +1,32 @@
 {
-    "compilerOptions": {
-        "outDir": "build",
-        "target": "ES6",
-    },
-    "include": [
-        "src/**/*"
-    ]
+	"compilerOptions": {
+		"allowJs": false,
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"target": "es2020",
+		"noImplicitAny": true,
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"outDir": "build",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"]
+		},
+		"typeRoots": [
+			"./src/@types",
+			"node_modules/@types"
+		],
+		"forceConsistentCasingInFileNames": true,
+		"noImplicitReturns": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"resolveJsonModule": true
+	},
+	"include": ["src/**/*"]
 }
+
+
+
+
+
+

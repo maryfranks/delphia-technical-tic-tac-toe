@@ -1,4 +1,6 @@
 import inquirer from 'inquirer'
+import { TicTacToeGame } from './tic-tac-toe'
+
 
 
 
@@ -12,7 +14,11 @@ inquirer
     /* Pass your questions in here */
   ])
   .then((answers) => {
-    // Use user feedback for... whatever!!
+    console.log(answers)
+    if (answers.answer === true) {
+        const newGame = new TicTacToeGame()
+        newGame.play()
+    }
   })
   .catch((error) => {
     if (error.isTtyError) {

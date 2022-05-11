@@ -13,9 +13,9 @@ inquirer
       }
     /* Pass your questions in here */
   ])
-  .then((answers) => {
-    console.log(answers)
-    if (answers.answer === true) {
+  .then((input) => {
+    console.log(input)
+    if (input.answer === true) {
         const newGame = new TicTacToeGame()
         newGame.play()
     }

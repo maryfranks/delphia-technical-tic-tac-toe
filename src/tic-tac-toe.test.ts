@@ -7,7 +7,7 @@ describe("Class: TicTacToeGame", () => {
       const newGame = new TicTacToeGame()
       jest.spyOn(console, "log")
       // act
-      newGame.displayBoard()
+      newGame._displayBoard()
       // assert
       // @ts-ignore:next
       expect(console.log.mock.calls[0][0]).toMatchSnapshot()

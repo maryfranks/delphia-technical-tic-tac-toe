@@ -14,10 +14,10 @@ include tests throughout
 
 - [x] program should take command line input
 - [ ] implement tic tac toe game class
-  - [ ] take a turn
+  - [x] take a turn
   - [x] display a board
-  - [ ] store state
-  - [ ] start a new game
+  - [x] store state
+  - [x] start a new game
   - [ ] evaluate win condition
 - [ ] program should exit at game end
 - [ ] offer to start new game when game is over

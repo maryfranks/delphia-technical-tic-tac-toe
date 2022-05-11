@@ -1,11 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Class: TicTacToeGame Instance Method: displayBoard displays human readable gameBoard 1`] = `
-"┌─────────┬────┬────┬────┐
-│ (index) │ 0  │ 1  │ 2  │
-├─────────┼────┼────┼────┤
-│    0    │ '' │ '' │ '' │
-│    1    │ '' │ '' │ '' │
-│    2    │ '' │ '' │ '' │
-└─────────┴────┴────┴────┘"
-`;
+exports[`Class: TicTacToeGame Instance Method: displayBoard displays human readable gameBoard 1`] = `"Welcome!"`;

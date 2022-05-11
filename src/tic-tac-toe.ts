@@ -40,7 +40,8 @@ export class TicTacToeGame {
     }
     
     takeTurn() {
-        let marker = 0
+        // marker = 1 for player X and 2 for player Y
+        let marker = 2
         console.log(marker)
         if (this.activePlayer === 1) {
             console.log(marker)
@@ -49,7 +50,7 @@ export class TicTacToeGame {
         } else {this.activePlayer = 1}
         
         const parsePlayerName = (player: number): string => {
-            if (marker === 0) {
+            if (marker === 1) {
                 return "X"
             } else {return "Y"}
         }

@@ -15,7 +15,7 @@ include tests throughout
 - [x] program should take command line input
 - [ ] implement tic tac toe game class
   - [ ] take a turn
-  - [ ] display a board
+  - [x] display a board
   - [ ] store state
   - [ ] start a new game
   - [ ] evaluate win condition
@@ -23,3 +23,4 @@ include tests throughout
 - [ ] offer to start new game when game is over
 - [ ] redraw game board on each move
 - [ ] improve test coverage
+- [ ] improve game board appearance

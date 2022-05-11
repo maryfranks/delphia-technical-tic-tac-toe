@@ -1,9 +1,6 @@
 import inquirer from 'inquirer'
 import { TicTacToeGame } from './tic-tac-toe'
 
-
-
-
 inquirer
   .prompt([
       {
@@ -21,9 +18,5 @@ inquirer
     }
   })
   .catch((error) => {
-    if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
+    throw(error)
   });

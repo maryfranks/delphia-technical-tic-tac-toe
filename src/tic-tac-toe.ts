@@ -1,6 +1,6 @@
 import inquirer from "inquirer"
 
-const instructions = "Please enter a valid, empty game board square by entering the desired row, followed by a `.`, and then the column number. For example: Row 1, column 2: 1.2"
+const instructions = "Please enter a valid, empty game board square by entering \nthe desired row, followed by a `.`, \nand then the column number. For example: Row 1, column 2: 1.2"
 
 export class TicTacToeGame {
     gameBoard: GameBoard
@@ -10,7 +10,6 @@ export class TicTacToeGame {
         this.gameBoard = [[null, null, null], [null, null, null], [null, null, null]]
         this.activePlayer = 1
     }
-
 
     async play() {
         console.log("Welcome!")
@@ -56,9 +55,7 @@ export class TicTacToeGame {
         }
         
         return inquirer.prompt([
-            // in the message, display which player
-            // validate data: 1. is it a valid, empty cell
-            // if the cell is valid, update gameBoard with marker
+            // to do: validate data - input must be an empty cell
             {
                 type: 'input',
                 name: 'move',
@@ -97,7 +94,6 @@ export class TicTacToeGame {
           }
         return false
     }
-
 }
 
 type Row = Array<Cell>

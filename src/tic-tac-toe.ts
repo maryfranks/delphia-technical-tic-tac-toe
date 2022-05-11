@@ -12,15 +12,15 @@ export class TicTacToeGame {
     }
 
 
-    play() {
+    async play() {
         console.log("Welcome!")
         console.log(instructions)
         this._displayBoard()
         do {
-            this.takeTurn()
+            await this.takeTurn()
             // without the new line, the game board prints misaligned
             console.log("\n")
-        } while (this.evaluateData() === false)
+        } while (this.hasWinner(this.gameBoard) === false)
     }
     
     _displayBoard() {
@@ -30,7 +30,7 @@ export class TicTacToeGame {
             return row.map((cell) => {
                 if (cell === 1) {
                     return "X"
-                } else if (cell === 0) {
+                } else if (cell === 2) {
                     return "O"
                 } 
                 return ""
@@ -39,8 +39,8 @@ export class TicTacToeGame {
         console.table(parsedBoard)
     }
     
-    takeTurn() {
-        // marker = 1 for player X and 2 for player Y
+    async takeTurn() {
+        // marker = 1 for player X (player 1) and 2 for player Y (player 2)
         let marker = 2
         console.log(marker)
         if (this.activePlayer === 1) {
@@ -55,7 +55,7 @@ export class TicTacToeGame {
             } else {return "Y"}
         }
         
-        inquirer.prompt([
+        return inquirer.prompt([
             // in the message, display which player
             // validate data: 1. is it a valid, empty cell
             // if the cell is valid, update gameBoard with marker
@@ -77,8 +77,8 @@ export class TicTacToeGame {
             ]).then((answers) => {
                 console.log(answers)
                 const stringToArray = answers.move.split(".")
-                const row = stringToArray[0]
-                const column = stringToArray[1]
+                const row = (stringToArray[0] - 1)
+                const column = (stringToArray[1] - 1)
                 console.log(`Row: ${row}, Column ${column}`)
                 this.gameBoard[row][column] = marker
                 this._displayBoard()
@@ -88,8 +88,14 @@ export class TicTacToeGame {
         })
     }
 
-    evaluateData() {
-        return true
+    hasWinner(gameBoard: GameBoard) {
+        for (const row of this.gameBoard) {
+            if (row[0] && row[1] && row[2] === 1) {
+                console.log("Player X wins!")
+                return true
+            }
+          }
+        return false
     }
 
 }
